@@ -25,6 +25,6 @@ export class User {
   @Field({ nullable: true })
   email?: string;
 
-  @Field(() => [Post], { nullable: true })
+  @Field(() => [Post], { nullable: 'items' })
   posts?: Post[];
 }
