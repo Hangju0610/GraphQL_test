@@ -1,3 +1,4 @@
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { UserEntity } from 'src/user/user.schema';
 import {
   Column,
@@ -21,4 +22,16 @@ export class PostEntity {
 
   @Column()
   content: string;
+}
+
+@ObjectType()
+export class Post {
+  @Field(() => Int)
+  id: number;
+
+  @Field()
+  title: string;
+
+  @Field({ nullable: true })
+  content?: string;
 }

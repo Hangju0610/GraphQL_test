@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { PostEntity } from 'src/post/post.schema';
+import { Post, PostEntity } from 'src/post/post.schema';
 import { Column, Entity, OneToOne, PrimaryColumn } from 'typeorm';
 
 @Entity()
@@ -15,4 +15,16 @@ export class UserEntity {
 
   @OneToOne(() => PostEntity, (post) => post.user)
   posts: PostEntity[];
+}
+
+@ObjectType()
+export class User {
+  @Field()
+  id: string;
+
+  @Field({ nullable: true })
+  email?: string;
+
+  @Field(() => [Post], { nullable: true })
+  posts?: Post[];
 }
