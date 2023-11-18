@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { UserEntity } from './user/user.schema';
 import { PostEntity } from './post/post.schema';
 import { join } from 'path';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { join } from 'path';
       }),
     }),
     UserModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],

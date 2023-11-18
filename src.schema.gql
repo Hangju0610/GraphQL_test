@@ -4,6 +4,7 @@
 
 type Post {
   id: Int!
+  userId: String!
   title: String!
   content: String
 }
@@ -16,4 +17,5 @@ type User {
 
 type Query {
   User: [User!]!
+  Post: Post!
 }

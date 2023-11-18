@@ -26,8 +26,11 @@ export class PostEntity {
 
 @ObjectType()
 export class Post {
-  @Field(() => Int)
+  @Field((type) => Int)
   id: number;
+
+  @Field()
+  userId: string;
 
   @Field()
   title: string;
