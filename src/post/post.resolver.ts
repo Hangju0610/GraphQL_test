@@ -6,7 +6,7 @@ import { User } from 'src/user/user.schema';
 export class PostResolver {
   constructor() {}
 
-  @Query((returns) => Post)
+  @Query((returns) => [Post])
   async Post() {
     return [
       {

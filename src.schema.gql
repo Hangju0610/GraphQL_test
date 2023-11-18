@@ -4,7 +4,11 @@
 
 type Post {
   id: Int!
+
+  """Post를 생성한 UserId"""
   userId: String!
+
+  """제목"""
   title: String!
   content: String
 }
@@ -16,6 +20,7 @@ type User {
 }
 
 type Query {
-  User: [User!]!
-  Post: Post!
+  allUser: [User!]!
+  User(id: String!): User!
+  Post: [Post!]!
 }

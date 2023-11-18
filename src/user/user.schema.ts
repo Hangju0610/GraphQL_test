@@ -25,6 +25,8 @@ export class User {
   @Field({ nullable: true })
   email?: string;
 
-  @Field(() => [Post], { nullable: 'items' })
+  // Array로 받고 싶은 경우, type을 해당 클래스로 입력한다.
+  //
+  @Field((type) => [Post], { nullable: 'items' })
   posts?: Post[];
 }
