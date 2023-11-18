@@ -6,6 +6,7 @@ import { Post, PostEntity } from 'src/post/post.schema';
 export class UserResolver {
   constructor() {}
 
+  // 전체 User 조회
   @Query((returns) => [User])
   async allUser() {
     return [
@@ -22,7 +23,9 @@ export class UserResolver {
     ];
   }
 
+  // 한 명 조회하기
   @Query((returns) => User)
+  // User의 @Args를 통해 id 값을 받는다.
   async User(@Args('id') id: string) {
     const userList = [
       {
@@ -42,6 +45,8 @@ export class UserResolver {
     return user[0];
   }
 
+  // ResolveField는 root의 하위 집합?? 을 불러올 때 사용한다.
+  // 즉 Type의 Field를 불러올 때 사용한다.
   @ResolveField((returns) => [Post])
   async posts(@Parent() user: User) {
     const { id } = user;

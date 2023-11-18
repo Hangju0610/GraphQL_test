@@ -26,7 +26,10 @@ export class User {
   email?: string;
 
   // Array로 받고 싶은 경우, type을 해당 클래스로 입력한다.
-  //
+  // 배열의 nullable : 해당 필드 또는 필드의 항목들이 null을 가질 수 있는지
+  // item : 배열 내의 개별 항목들이 null일 수 있다.
+  // true : 필드 자체가 null일 수 있다.
+  // itemsAndList : 필드 자체와 배열 내의 항목이 모두 null이 될 수 있다.
   @Field((type) => [Post], { nullable: 'items' })
   posts?: Post[];
 }
