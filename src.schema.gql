@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  id: Int!
+  title: String!
+  content: String
+}
+
+type User {
+  id: String!
+  email: String
+  posts: [Post]!
+}
+
+type Query {
+  User: [User!]!
+}
